@@ -1,0 +1,836 @@
+[2024-07-03T10:08:49.034+0000] {processor.py:161} INFO - Started process (PID=8669) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:08:49.044+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:08:49.047+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:08:49.046+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:08:49.379+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:08:49.378+0000] {data_etl.py:25} ERROR - There was an error with the request, HTTPSConnectionPool(host='api.coincap.io', port=443): Max retries exceeded with url: /v2/exchanges (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f32c93c5bb0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[2024-07-03T10:09:19.481+0000] {processor.py:161} INFO - Started process (PID=8676) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:09:19.483+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:09:19.486+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:09:19.485+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:09:20.113+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:09:20.147+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:09:20.118+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:09:20.152+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:09:20.203+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.727 seconds
+[2024-07-03T10:09:50.345+0000] {processor.py:161} INFO - Started process (PID=8683) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:09:50.347+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:09:50.359+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:09:50.349+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:09:51.069+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:09:51.098+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:09:51.071+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:09:51.102+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:09:51.135+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.797 seconds
+[2024-07-03T10:10:21.427+0000] {processor.py:161} INFO - Started process (PID=8690) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:10:21.429+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:10:21.432+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:10:21.431+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:10:22.121+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:10:22.149+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:10:22.123+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:10:22.153+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:10:22.212+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.791 seconds
+[2024-07-03T10:10:52.645+0000] {processor.py:161} INFO - Started process (PID=8697) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:10:52.648+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:10:52.651+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:10:52.650+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:10:53.395+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:10:53.431+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:10:53.398+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:10:53.438+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:10:53.497+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.864 seconds
+[2024-07-03T10:11:23.887+0000] {processor.py:161} INFO - Started process (PID=8704) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:11:23.889+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:11:23.892+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:11:23.891+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:11:24.636+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:11:24.690+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:11:24.640+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:11:24.697+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:11:24.755+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.875 seconds
+[2024-07-03T10:11:55.184+0000] {processor.py:161} INFO - Started process (PID=8711) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:11:55.186+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:11:55.188+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:11:55.188+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:11:55.869+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:11:55.922+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:11:55.873+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:11:55.930+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:11:55.993+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.823 seconds
+[2024-07-03T10:12:26.369+0000] {processor.py:161} INFO - Started process (PID=8718) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:12:26.371+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:12:26.374+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:12:26.373+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:12:27.472+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:12:27.500+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:12:27.475+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:12:27.504+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:12:27.537+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 1.174 seconds
+[2024-07-03T10:12:57.758+0000] {processor.py:161} INFO - Started process (PID=8725) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:12:57.762+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:12:57.766+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:12:57.765+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:12:58.528+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:12:58.558+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:12:58.531+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:12:58.563+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:12:58.603+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.856 seconds
+[2024-07-03T10:13:29.034+0000] {processor.py:161} INFO - Started process (PID=8732) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:13:29.037+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:13:29.039+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:13:29.039+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:13:29.747+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:13:29.781+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:13:29.751+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:13:29.785+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:13:29.818+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.795 seconds
+[2024-07-03T10:14:00.372+0000] {processor.py:161} INFO - Started process (PID=8739) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:14:00.373+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:14:00.375+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:14:00.375+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:14:01.198+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:14:01.223+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:14:01.200+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:14:01.227+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:14:01.269+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.906 seconds
+[2024-07-03T10:14:31.646+0000] {processor.py:161} INFO - Started process (PID=8746) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:14:31.649+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:14:31.653+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:14:31.652+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:14:32.847+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:14:32.898+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:14:32.851+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:14:32.904+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:14:32.938+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 1.302 seconds
+[2024-07-03T10:15:03.091+0000] {processor.py:161} INFO - Started process (PID=8753) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:15:03.093+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:15:03.095+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:15:03.094+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:15:03.848+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:15:03.898+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:15:03.852+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:15:03.905+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:15:03.966+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.882 seconds
+[2024-07-03T10:15:34.353+0000] {processor.py:161} INFO - Started process (PID=8760) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:15:34.356+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:15:34.358+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:15:34.357+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:15:34.997+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:15:35.026+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:15:35.000+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:15:35.030+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:15:35.062+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.718 seconds
+[2024-07-03T10:16:05.445+0000] {processor.py:161} INFO - Started process (PID=8767) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:16:05.447+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:16:05.449+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:16:05.449+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:16:06.129+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:16:06.160+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:16:06.131+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:16:06.165+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:16:06.211+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.772 seconds
+[2024-07-03T10:16:36.627+0000] {processor.py:161} INFO - Started process (PID=8774) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:16:36.630+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:16:36.633+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:16:36.632+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:16:37.363+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:16:37.413+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:16:37.368+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:16:37.420+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:16:37.481+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.863 seconds
+[2024-07-03T10:17:07.856+0000] {processor.py:161} INFO - Started process (PID=8781) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:17:07.858+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:17:07.860+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:17:07.859+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:17:08.511+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:17:08.535+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:17:08.514+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:17:08.537+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:17:08.577+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.729 seconds
+[2024-07-03T10:17:38.804+0000] {processor.py:161} INFO - Started process (PID=8788) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:17:38.806+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:17:38.808+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:17:38.807+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:17:39.417+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:17:39.471+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:17:39.423+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:17:39.478+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:17:39.540+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.742 seconds
+[2024-07-03T10:18:09.954+0000] {processor.py:161} INFO - Started process (PID=8795) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:18:09.957+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:18:09.959+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:18:09.959+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:18:10.647+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:18:10.676+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:18:10.649+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:18:10.680+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:18:10.721+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.782 seconds
+[2024-07-03T10:18:41.436+0000] {processor.py:161} INFO - Started process (PID=8802) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:18:41.439+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:18:41.441+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:18:41.441+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:18:42.082+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:18:42.110+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:18:42.085+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:18:42.114+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:18:42.152+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.723 seconds
+[2024-07-03T10:19:12.460+0000] {processor.py:161} INFO - Started process (PID=8809) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:19:12.463+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:19:12.466+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:19:12.465+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:19:13.726+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:19:13.761+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:19:13.735+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:19:13.765+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:19:13.852+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 1.404 seconds
+[2024-07-03T10:19:44.165+0000] {processor.py:161} INFO - Started process (PID=8823) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:19:44.167+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:19:44.169+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:19:44.169+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:19:44.804+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:19:44.832+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:19:44.806+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:19:44.836+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:19:44.869+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.712 seconds
+[2024-07-03T10:20:15.166+0000] {processor.py:161} INFO - Started process (PID=8831) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:20:15.168+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:20:15.170+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:20:15.170+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:20:15.883+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:20:15.909+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:20:15.885+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:20:15.913+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:20:15.945+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.784 seconds
+[2024-07-03T10:20:46.366+0000] {processor.py:161} INFO - Started process (PID=8838) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:20:46.368+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:20:46.370+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:20:46.369+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:20:47.014+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:20:47.065+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:20:47.020+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:20:47.072+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:20:47.130+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.774 seconds
+[2024-07-03T10:21:17.539+0000] {processor.py:161} INFO - Started process (PID=8845) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:21:17.542+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:21:17.545+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:21:17.545+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:21:18.716+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:21:18.769+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:21:18.721+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:21:18.777+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:21:18.819+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 1.290 seconds
+[2024-07-03T10:21:49.159+0000] {processor.py:161} INFO - Started process (PID=8853) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:21:49.162+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:21:49.166+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:21:49.165+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:21:49.717+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:21:49.773+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:21:49.721+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:21:49.781+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:21:49.851+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.701 seconds
+[2024-07-03T10:22:20.277+0000] {processor.py:161} INFO - Started process (PID=8860) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:22:20.278+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:22:20.280+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:22:20.280+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:22:20.920+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:22:20.974+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:22:20.924+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:22:20.981+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:22:21.039+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.769 seconds
+[2024-07-03T10:22:51.429+0000] {processor.py:161} INFO - Started process (PID=8867) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:22:51.432+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:22:51.435+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:22:51.434+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:22:52.144+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:22:52.172+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:22:52.147+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:22:52.177+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:22:52.217+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.800 seconds
+[2024-07-03T10:23:22.577+0000] {processor.py:161} INFO - Started process (PID=8874) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:23:22.579+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:23:22.582+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:23:22.581+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:23:23.777+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:23:23.809+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:23:23.781+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:23:23.813+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:23:23.856+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 1.286 seconds
+[2024-07-03T10:23:54.079+0000] {processor.py:161} INFO - Started process (PID=8881) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:23:54.081+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:23:54.083+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:23:54.083+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:23:54.532+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:23:54.560+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:23:54.534+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:23:54.563+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:23:54.605+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.532 seconds
+[2024-07-03T10:24:24.999+0000] {processor.py:161} INFO - Started process (PID=8888) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:24:25.000+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:24:25.002+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:24:25.002+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:24:25.711+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:24:25.738+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:24:25.715+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:24:25.743+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:24:25.795+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.803 seconds
+[2024-07-03T10:24:56.265+0000] {processor.py:161} INFO - Started process (PID=8895) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:24:56.268+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:24:56.271+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:24:56.270+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:24:56.977+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:24:57.035+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:24:56.981+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:24:57.043+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:24:57.160+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 0.905 seconds
+[2024-07-03T10:25:27.578+0000] {processor.py:161} INFO - Started process (PID=8902) to work on /opt/airflow/dags/mydag.py
+[2024-07-03T10:25:27.583+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mydag.py for tasks to queue
+[2024-07-03T10:25:27.587+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:25:27.586+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mydag.py
+[2024-07-03T10:25:28.620+0000] {logging_mixin.py:188} INFO - postgress link postgresql://postgres:12345@localhost:5432/postgres
+[2024-07-03T10:25:28.676+0000] {logging_mixin.py:188} INFO - [2024-07-03T10:25:28.625+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/mydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/mydag.py", line 28, in <module>
+    python_callable=data_etl.run(),
+  File "/opt/airflow/dags/Scripts/data_etl.py", line 61, in run
+    with WarehouseConnection(get_warehouse_creds()).managed_cursor() as curr:
+  File "/usr/local/lib/python3.8/contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "/opt/airflow/dags/Scripts/db.py", line 26, in managed_cursor
+    self.conn = psycopg2.connect(self.conn_url)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+[2024-07-03T10:25:28.684+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/mydag.py
+[2024-07-03T10:25:28.772+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mydag.py took 1.207 seconds
